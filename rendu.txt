@@ -1,0 +1,146 @@
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git
+$ git init
+Initialized empty Git repository in C:/Users/User/Desktop/ENSIM/TP_devops_git/.git/
+----------------------------------------------------
+
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+-----------------------------------------------
+
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git add .
+----------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+        new file:   script.js
+        new file:   styles.css
+
+------------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git commit -m "Premier commit"
+[master (root-commit) 6383d25] Premier commit
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+ create mode 100644 script.js
+ create mode 100644 styles.css
+------------------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+--------------------------------------------------------
+
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git remote add origin https://github.com/Asmahan355/Tp_devops_git.git
+----------------------------------------------------------------
+
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 245 bytes | 245.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Asmahan355/Tp_devops_git.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+----------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git branch asmahan
+-------------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git checkout asmahan
+Switched to branch 'asmahan'
+-----------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (asmahan)
+$ git add .
+-------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (asmahan)
+$ git commit -m "modification dans le fichier index.html"
+[asmahan 63b833f] modification dans le fichier index.html
+ 1 file changed, 1 insertion(+)
+---------------------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (asmahan)
+$ git push
+fatal: The current branch asmahan has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin asmahan
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+------------------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (asmahan)
+$ git push -u origin asmahan
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 351 bytes | 351.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'asmahan' on GitHub by visiting:
+remote:      https://github.com/Asmahan355/Tp_devops_git/pull/new/asmahan
+remote:
+To https://github.com/Asmahan355/Tp_devops_git.git
+ * [new branch]      asmahan -> asmahan
+branch 'asmahan' set up to track 'origin/asmahan'.
+----------------------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (asmahan)
+$ git status
+On branch asmahan
+Your branch is up to date with 'origin/asmahan'.
+
+nothing to commit, working tree clean
+-----------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (asmahan)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+-------------------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git merge asmahan
+Updating 6383d25..63b833f
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
+------------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git log
+commit 63b833ff120f20b76a6f04dac3ba50b3dceaff15 (HEAD -> master, origin/asmahan, asmahan)
+Author: Asmahan355 <asmahan.elmhassani@etu.uae.ac.ma>
+Date:   Tue Apr 9 13:28:17 2024 +0200
+
+    modification dans le fichier index.html
+
+commit 6383d2568c85b05a829b1baa086a16cbeeef2918 (origin/master)
+Author: Asmahan355 <asmahan.elmhassani@etu.uae.ac.ma>
+Date:   Tue Apr 9 13:16:14 2024 +0200
+
+    Premier commit
+-------------------------------------------------
+User@DESKTOP-UL6QBNQ MINGW64 ~/Desktop/ENSIM/TP_devops_git (master)
+$ git branch -d asmahan
+Deleted branch asmahan (was 63b833f).
+
